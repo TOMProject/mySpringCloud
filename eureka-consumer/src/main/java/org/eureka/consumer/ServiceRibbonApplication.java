@@ -3,6 +3,8 @@ package org.eureka.consumer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
  *
  */
 @SpringBootApplication
+@EnableEurekaClient
 @EnableDiscoveryClient //申明这个应用是eureka的客户端
 public class ServiceRibbonApplication {
 
@@ -20,6 +23,7 @@ public class ServiceRibbonApplication {
     }
 
     @Bean
+   // @LoadBalanced 本地的负载均衡器
     RestTemplate restTemplate() {
         return new RestTemplate();
     }
