@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name="eureka-client")
 public interface FeignService {
 
-	@RequestMapping(method = RequestMethod.GET, value = "/hc")
+	@RequestMapping(value = "/hc",method = RequestMethod.GET)
 	public String feignConsumer(@RequestParam(value = "name") String a);
 	
 }

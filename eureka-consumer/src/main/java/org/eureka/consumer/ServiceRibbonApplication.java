@@ -15,13 +15,15 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableDiscoveryClient //申明这个应用是eureka的客户端
 public class ServiceRibbonApplication {
 
     public static void main(String[] args) {
         SpringApplication.run( ServiceRibbonApplication.class, args );
     }
-
+    /**
+     * restTemplate 远程调用方法，底层的实现是httpClient 
+     * @return
+     */
     @Bean
    // @LoadBalanced 本地的负载均衡器
     RestTemplate restTemplate() {

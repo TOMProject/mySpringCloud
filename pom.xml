@@ -15,9 +15,9 @@
 	<modules>
 		<module>eureka-server</module>
 		<module>eureka-client</module>
-
-
-	</modules>
+    <module>eureka-server01</module>
+    <module>eureka-server02</module>
+  </modules>
 
 	
 

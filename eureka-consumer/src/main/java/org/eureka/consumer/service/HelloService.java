@@ -49,15 +49,12 @@ public class HelloService {
 	 */
 	@Autowired
 	LoadBalancerClient loadBalancerClient;
-	
-	
 	public String hiService(String name) {
 		String nameid ="eureka-client";
 		ServiceInstance choose = loadBalancerClient.choose(nameid);
 		if(choose == null) {
 			return null;
 		}
-
 		choose.getHost();//主机名称
 		choose.getPort();//端口号
 		String url = "http://"+choose.getHost()+":"+choose.getPort();
