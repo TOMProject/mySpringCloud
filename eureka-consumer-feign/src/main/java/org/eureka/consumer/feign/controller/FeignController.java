@@ -15,6 +15,6 @@ public class FeignController {
 	@GetMapping(value="/consumer")
 	public String dc() {
 		
-		return  feignService.feignConsumer("a");
+		return  feignService.feignConsumer();
 	}
 }

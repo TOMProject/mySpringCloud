@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableEurekaClient
+@EnableHystrix //使用熔断器组件注解
 public class ServiceRibbonApplication {
 
     public static void main(String[] args) {
@@ -25,7 +27,7 @@ public class ServiceRibbonApplication {
      * @return
      */
     @Bean
-   // @LoadBalanced 本地的负载均衡器
+    //@LoadBalanced //本地的负载均衡器
     RestTemplate restTemplate() {
         return new RestTemplate();
     }

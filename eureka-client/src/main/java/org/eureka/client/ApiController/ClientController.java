@@ -23,8 +23,8 @@ public class ClientController {
 	}
 
 	@RequestMapping("/hc")
-	public String hi(@RequestParam(value = "name") String name) {
-		return "hc --->>> hc" + name + "i am from port:" + port;
+	public String hi() {
+		return "hc --->>> hc----i am from port:" + port;
 	}
 
 }
